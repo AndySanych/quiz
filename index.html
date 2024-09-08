@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta information about character set, viewport for responsiveness, and page description -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Description for SEO and accessibility -->
+    <meta
+      name="description"
+      content="Fill out student information and answer HTML and CSS quiz questions. A convenient form for learning and testing web development skills."
+    />
+
+    <!-- Descriptive and concise title for SEO and screen readers -->
+    <title>Quiz: HTML and CSS Basics</title>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header with logo, title, and navigation links -->
+    <header>
+      <!-- Logo with alt text for accessibility -->
+      <img
+        id="logo"
+        src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"
+        alt="freeCodeCamp"
+      />
+      <!-- Main title of the page -->
+      <h1>HTML/CSS Quiz</h1>
+      <!-- Navigation menu with access keys for better accessibility -->
+      <nav>
+        <ul>
+          <li><a href="#student-info" accesskey="s">INFO</a></li>
+          <li><a href="#html-questions" accesskey="s">HTML</a></li>
+          <li><a href="#css-questions" accesskey="s">CSS</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main content of the page: form with student info and quiz questions -->
+    <main>
+      <!-- Form that posts data to the server -->
+      <form
+        method="post"
+        action="https://freecodecamp.org/practice-project/accessibility-quiz"
+      >
+        <!-- Section for student information with proper labeling and accessibility attributes -->
+        <section role="region" aria-labelledby="student-info">
+          <h2 id="student-info">Student Info</h2>
+          <div class="info">
+            <!-- Label for name input -->
+            <label for="student-name">Name:</label>
+            <input type="text" name="student-name" id="student-name" />
+          </div>
+          <div class="info">
+            <!-- Label for email input with correct input type for validation -->
+            <label for="student-email">Email:</label>
+            <input type="email" name="student-email" id="student-email" />
+          </div>
+          <div class="info">
+            <!-- Label for date input, using date type for date picker support -->
+            <label for="birth-date">Date of Birth:</label>
+            <input type="date" name="birth-date" id="birth-date" />
+          </div>
+        </section>
+
+        <!-- Section for HTML quiz questions -->
+        <section role="region" aria-labelledby="html-questions">
+          <h2 id="html-questions">HTML</h2>
+
+          <!-- First HTML question: True or False, using fieldset and legend for semantic structure -->
+          <div class="question-block">
+            <h3><span class="sr-only">Question</span>1</h3>
+            <fieldset class="question" name="html-question-one">
+              <!-- Legend provides a caption for the fieldset -->
+              <legend>
+                The legend element represents a caption for the content of its
+                parent fieldset element
+              </legend>
+              <!-- Unordered list for the answer options -->
+              <ul class="answers-list">
+                <li>
+                  <!-- Radio button for "True" option -->
+                  <label for="q1-a1">
+                    <input type="radio" id="q1-a1" name="q1" value="true" />
+                    True
+                  </label>
+                </li>
+                <li>
+                  <!-- Radio button for "False" option -->
+                  <label for="q1-a2">
+                    <input type="radio" id="q1-a2" name="q1" value="false" />
+                    False
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+
+          <!-- Second HTML question: True or False -->
+          <div class="question-block">
+            <h3><span class="sr-only">Question</span>2</h3>
+            <fieldset class="question" name="html-question-two">
+              <!-- Legend describing the question -->
+              <legend>
+                A label element nesting an input element is required to have a
+                for attribute with the same value as the input's id
+              </legend>
+              <ul class="answers-list">
+                <li>
+                  <!-- Radio button for "True" option -->
+                  <label for="q2-a1">
+                    <input type="radio" id="q2-a1" name="q2" value="true" />
+                    True
+                  </label>
+                </li>
+                <li>
+                  <!-- Radio button for "False" option -->
+                  <label for="q2-a2">
+                    <input type="radio" id="q2-a2" name="q2" value="false" />
+                    False
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+        </section>
+
+        <!-- Section for CSS quiz questions -->
+        <section role="region" aria-labelledby="css-questions">
+          <h2 id="css-questions">CSS</h2>
+
+          <!-- Question with a dropdown (select element) for the margin property -->
+          <div class="formrow">
+            <div class="question-block">
+              <label for="selector"
+                >Can the CSS margin property accept negative values?</label
+              >
+            </div>
+            <div class="answer">
+              <!-- Select element with required attribute for validation -->
+              <select name="selector" id="selector" required>
+                <option value="">Select an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+
+            <!-- Textarea for user to input any additional questions -->
+            <div class="question-block">
+              <label for="css-textarea">Do you have any questions:</label>
+            </div>
+            <div class="answer">
+              <textarea
+                id="css-textarea"
+                name="css-questions"
+                rows="5"
+                cols="24"
+              ></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- Submit button for sending the form data -->
+        <button type="submit">Send</button>
+      </form>
+    </main>
+
+    <!-- Footer with contact information -->
+    <footer>
+      <address>
+        <a href="https://freecodecamp.org">freeCodeCamp</a><br />
+        San Francisco<br />
+        California<br />
+        USA
+      </address>
+    </footer>
+  </body>
+</html>
